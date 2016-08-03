@@ -270,7 +270,8 @@ angular.module('starter', ['ionic','ngIOS9UIWebViewPatch', 'starter.controllers'
                 cache: false,
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/themes/authentication/html/fake-login.html"
+                        templateUrl: "templates/themes/authentication/html/fake-login.html",
+                        controller:"LoginCtrl"
                     }
                 }
             })
