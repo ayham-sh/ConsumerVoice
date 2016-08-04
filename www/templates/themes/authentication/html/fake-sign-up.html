@@ -3,7 +3,7 @@
 <!--State name : app.fakeSignUp-->
 <!--URL : #app/fakeSignUp-->
 
-<ion-view title="Sign Up">
+<ion-view title="Sign Up" ng-controller="signupCtrl">
     <!--left button on navigation bar-->
     <ion-nav-buttons side="left">
         <a ng-click="$ionicGoBack()" class="button back-button buttons button-clear header-item nav-back-btn">
@@ -17,36 +17,57 @@
             <img src="img/app_icon.png" class="md-card-image">
         </div>
         <!--input section-->
+        <form   name="NewForm" >
+
         <md-input-container md-no-float="">
             <div>
-                <input class="user-name formplaceholder" placeholder="Username">
+                <input  type= "text"  class="user-name formplaceholder" name="username" required="true" ng-model="user.name"   placeholder="Username">
+             <span ng-show="NewForm.username.$touched && NewForm.username.$invalid">The name is required</span>
+
             </div>
         </md-input-container>
         <md-input-container md-no-float="">
             <div>
-                <input type="password" class="user-name formplaceholder" placeholder="Password">
+                <input type="EMAIL" class="user-name formplaceholder" name="EventEmail" ng-model="user.Email" required="true" placeholder="Mail">
+              <span ng-show="NewForm.EventEmail.$touched && NewForm.EventEmail.$invalid">The Email is required</span>
+              <span ng-show="{ verfiy == false}">The Email is required</span>
             </div>
         </md-input-container>
         <md-input-container md-no-float="">
             <div>
-                <input type="password" class="user-name formplaceholder" placeholder="Confirm Password">
+                <input type="password" type="password" class="user-name   formplaceholder"  required="true"  name="Pass1" ng-model="Pass1"  placeholder="Password">
+              <span ng-show="NewForm.Pass1.$touched && NewForm.Pass1.$invalid">The password is required</span>
             </div>
         </md-input-container>
         <md-input-container md-no-float="">
             <div>
-                <input class="user-name formplaceholder" placeholder="Mail">
+                <input type="password" class="user-name formplaceholder" name="user.Pass2" ng-model="Pass2" placeholder="Confirm Password">
             </div>
         </md-input-container>
-        <md-checkbox aria-label="CheckboxTerms white-color">
+
+        <md-input-container md-no-float="">
+
+            <div>
+                <input type="text" class="user-name formplaceholder" name="EventAdd" ng-model="user.Add" placeholder="Address">
+            </div>
+        </md-input-container>
+        <md-input-container md-no-float="">
+            <div>
+                <input type="text" class="user-name formplaceholder" name="EventSahip" ng-model="user.Sahip" placeholder="Sahip Olunan Arçelik Ürünleri:">
+            </div>
+        </md-input-container>
+        <md-checkbox aria-label="CheckboxTerms white-color" >
             I accept terms and conditions.
         </md-checkbox>
         <!--end input section-->
 
+
         <div class="mybtn">
-          <a class="right md-raised md-button md-default-theme">
+          <a class="right md-raised md-button md-default-theme" ng-disabled="NewForm.$invalid"  ng-click="submit(user )">
               Sign Up
           </a>
         </div>
+        </form>
 
 
     </ion-content><!--end social sign up section-->
