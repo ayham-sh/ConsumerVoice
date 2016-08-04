@@ -24,6 +24,7 @@
                 <md-input-container md-no-float="">
                     <input type="EMAIL" class="user-name formplaceholder" required="true  " ng-model="user.name" ng-click="resetNameState()" placeholder="Username">
                 </md-input-container>
+              <span ng-show="NewForm.EventEmail.$touched && NewForm.EventEmail.$invalid">The Email is required</span>
               <div ng-hide="user.nameState" ><p>please enter a valid email</p></div>
                 <hr/>
                 <md-input-container md-no-float="">

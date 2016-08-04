@@ -22,40 +22,29 @@ appControllers.controller('LoginCtrl', function ($scope, $state, $cordovaOauth,$
   };
 
   $scope.signIn = function(user) {
-    var regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (regex.test($scope.user.name)){
-    $scope.user.nameState=true;
-    if ($scope.rootUser.name === $scope.user.name && $scope.rootUser.password === $scope.user.password) {
-      console.log(true);
 
-    }
-    else {
-      console.log(false);
-      $scope.user.passwordState=false;
-   /*   $mdDialog.show(
-        $mdDialog.alert({
-          title: 'you have entered wrong user name or password ',
-          textContent: 'This is an example of ',
-          ok: 'Ok',
-          clickOutsideToClose:true
-        }));
-*/
+    // var regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+   /* if (regex.test($scope.user.name)) {
+      $scope.user.nameState = true;*/
+      if ($scope.rootUser.name === $scope.user.name && $scope.rootUser.password === $scope.user.password) {
+        console.log(true);
 
-    }}else{
-    /*  $mdDialog.show(
-      $mdDialog.alert({
-        title: 'please enter a correct email ',
-        textContent: 'This is an example of ',
-        ok: 'Ok',
-        clickOutsideToClose:true
-      }));*/
-     $scope.user.nameState=false;
+      }
+      else {
+        console.log(false);
+        $scope.user.passwordState = false;
 
-    }
 
+      }
+  /*  } else {
+
+      $scope.user.nameState = false;
+
+    }*/
 
   }
-});
+  }
+);
 // End of  login controller.
 
 
