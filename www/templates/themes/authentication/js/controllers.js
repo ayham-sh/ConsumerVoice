@@ -27,6 +27,7 @@ appControllers.controller('LoginCtrl', function ($scope, $state, $cordovaOauth,$
       if ($scope.rootUser.name === $scope.user.name && $scope.rootUser.password === $scope.user.password) {
         console.log(true);
         $scope.user.state = true;
+        $state.go('main');
       }
       else {
         console.log(false);
