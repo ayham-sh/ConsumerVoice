@@ -9,38 +9,32 @@ appControllers.controller('LoginCtrl', function ($scope, $state, $cordovaOauth,$
  $scope.user={
    name:'',
    password:'',
-   nameState:true,
-   passwordState:true
+   state:true
+
+
  };
 
-  $scope.resetNameState= function(){
-    $scope.user.nameState=true;
-  };
-  $scope.resetPasswordState= function(){
 
-    $scope.user.passwordState=true;
+  $scope.isItEmail=function(user){
+    var regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    return regex.test($scope.user.name);
+
   };
 
   $scope.signIn = function(user) {
 
-    // var regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-   /* if (regex.test($scope.user.name)) {
-      $scope.user.nameState = true;*/
       if ($scope.rootUser.name === $scope.user.name && $scope.rootUser.password === $scope.user.password) {
         console.log(true);
-
+        $scope.user.state = true;
       }
       else {
         console.log(false);
-        $scope.user.passwordState = false;
+        $scope.user.state=false;
 
 
       }
-  /*  } else {
 
-      $scope.user.nameState = false;
-
-    }*/
 
   }
   }

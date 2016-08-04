@@ -22,15 +22,17 @@
 
             <div id="fakeLogin">
                 <md-input-container md-no-float="">
-                    <input type="EMAIL" class="user-name formplaceholder" required="true  " ng-model="user.name" ng-click="resetNameState()" placeholder="Username">
+                    <input type="email" class="user-name formplaceholder" name="Email" required ng-model="user.name" ng-click="resetNameState()" placeholder="Username">
                 </md-input-container>
-              <span ng-show="NewForm.EventEmail.$touched && NewForm.EventEmail.$invalid">The Email is required</span>
-              <div ng-hide="user.nameState" ><p>please enter a valid email</p></div>
+              <span ng-show="loginForm.Email.$error.email&&loginForm.Email.$touched" style="color: white">please enter a valid email</span>
+              <span ng-show="loginForm.Email.$touched && loginForm.Email.$error.required" style="color: white"> email is required </span>
+
                 <hr/>
                 <md-input-container md-no-float="">
-                    <input class="user-password formplaceholder" required ng-model="user.password" ng-click="resetPasswordState()" type="password" placeholder="Password">
+                    <input class="user-password formplaceholder" name="password" required="true" ng-model="user.password" ng-click="resetPasswordState()" type="password" placeholder="Password">
                 </md-input-container>
-              <div ng-hide="user.passwordState" ><p>the password or user name is wrong </p></div>
+              <span ng-show="loginForm.password.$touched && loginForm.password.$invalid">The password is required</span>
+              <span  ng-hide="user.state" style="color:white">user name or password is wrong</span>
 
             </div>
 
