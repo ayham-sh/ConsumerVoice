@@ -1,0 +1,77 @@
+<ion-view>
+  <ion-content title="Hoşgeldiniz">
+    <md-content layout-paddign layout-margin ng-controller="serviceEv">
+      <div>
+        <form name="custServForm">
+          <h4 class="md-title text-center">Servis Değerlendirme</h4>
+          <div layout="row">
+            <md-input-container class="md-block" >
+              <label class="slcts">Değerlendirmek istediğiniz yetkili servisi giriniz.
+              </label>
+              <md-select ng-model="serviceBranchModel">
+                <md-option ng-repeat="val in serviceBranch" value="{{val.value}}">
+                  {{val.value}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+
+          </div>
+          <div layout="row">
+            <md-input-container class="md-block" >
+              <label class="slcts">Servis randevusu alma sürecini puanlayınız</label>
+              <md-select ng-model="slctServiceDurationModel">
+                <md-option ng-repeat="val in slctServiceDuration" value="{{val.point}}">
+                  {{val.point}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+          </div>
+          <div layout="row">
+            <md-input-container class="md-block" >
+              <label class="slcts">Servis personelinin genel yaklaşımı nasıldı ?</label>
+              <md-select ng-model="slctStaffApproachModel">
+                <md-option ng-repeat="val in slctStaffApproach" value="{{val.point}}">
+                  {{val.point}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+          </div>
+          <div layout="row">
+            <md-input-container class="md-block" >
+              <label class="slcts">Servis personelinin arıza tespiti ve çözüm önerileri nasıldı ?</label>
+              <md-select ng-model="slctStaffFixingModel">
+                <md-option ng-repeat="val in slctStaffFixing" value="{{val.point}}">
+                  {{val.point}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+          </div>
+          <div  layout="row" >
+            <md-input-container class="md-block mybtn" >
+              <md-button class="md-raised md-primary ">Kayıd Et</md-button>
+            </md-input-container>
+          </div>
+        </form>
+      </div>
+    </md-content>
+  </ion-content>
+</ion-view>
+
+
+<!--<div class="row col-80 col-offset-10 text-center">-->
+<!--<h3 class="md-headline">Müşteri hizmetleri Değerlendirme</h3>-->
+<!--</div>-->
+<!--<br/>-->
+<!--<div class="row col-80 col-offset-10 text-center">-->
+<!--<h4 class="md-body-2">Arçelik müşteri hizmetleri ile bir görüşmeniz oldu mu?</h4>-->
+<!--</div>-->
+<!--<div class="row col-80 col-offset-10 text-center">-->
+<!--<md-input-container class="md-block" flex-gt-sm>-->
+<!--<label>Arçelik müşteri hizmetleri ile bir görüşmeniz oldu mu?</label>-->
+<!--<md-select ng-model="user.state">-->
+<!--<md-option ng-repeat="state in states" value="{{state.abbrev}}">-->
+<!--{{state.abbrev}}-->
+<!--</md-option>-->
+<!--</md-select>-->
+<!--</md-input-container>-->
+<!--</div>-->

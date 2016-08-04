@@ -270,8 +270,7 @@ angular.module('starter', ['ionic','ngIOS9UIWebViewPatch', 'starter.controllers'
                 cache: false,
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/themes/authentication/html/fake-login.html",
-                        controller:"LoginCtrl"
+                        templateUrl: "templates/themes/authentication/html/fake-login.html"
                     }
                 }
             })
@@ -303,8 +302,70 @@ angular.module('starter', ['ionic','ngIOS9UIWebViewPatch', 'starter.controllers'
                         templateUrl: "templates/themes/try-app/html/welcome.html"
                     }
                 }
-            });
-
+            })
+          .state('app.adds', {
+            url: "/addEV",
+            cache: false,
+            views: {
+              'menuContent': {
+                templateUrl: "templates/themes/evaluationForms/advertisementsEvaluation/html/advertisementsEV.html"
+              }
+            }
+          })
+          .state('app.consumerService', {
+            url: "/consumerService",
+            cache: false,
+            views: {
+              'menuContent': {
+                templateUrl: "templates/themes/evaluationForms/consumerServiceEvaluation/html/consumerServiceEV.html"
+              }
+            }
+          })
+          .state('app.faltyApply', {
+            url: "/faltyApply",
+            cache: false,
+            views: {
+              'menuContent': {
+                templateUrl: "templates/themes/evaluationForms/faltyApplying/html/faltyApplyEv.html"
+              }
+            }
+          })
+          .state('app.products', {
+            url: "/products",
+            cache: false,
+            views: {
+              'menuContent': {
+                templateUrl: "templates/themes/evaluationForms/productsEvalutaion/html/productsEv.html"
+              }
+            }
+          })
+          .state('app.sellingPoints', {
+            url: "/sellingPoints",
+            cache: false,
+            views: {
+              'menuContent': {
+                templateUrl: "templates/themes/evaluationForms/sellingPointEvaluation/html/sellingPointsEv.html"
+              }
+            }
+          })
+          .state('app.serviceEv', {
+            url: "/serviceEv",
+            cache: false,
+            views: {
+              'menuContent': {
+                templateUrl: "templates/themes/evaluationForms/serviceEvaluation/html/serviceEv.html"
+              }
+            }
+          })
+          .state('app.main', {
+            url: "/main",
+            cache: false,
+            views: {
+              'menuContent': {
+                templateUrl: "templates/themes/main-page/html/main.html"
+              }
+            }
+          })
 
 
         //Use $urlRouterProvider.otherwise(Url);

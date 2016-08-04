@@ -1,0 +1,78 @@
+<ion-view title="Hoşgeldiniz" >
+  <ion-content >
+    <md-content layout-paddign layout-margin ng-controller="advertisementEvCtrl">
+      <div>
+        <form name="custServForm">
+      <h4 class="md-title text-center">Müşteri Hizmetleri Değerlendirme </h4>
+          <div layout="row">
+            <md-input-container class="md-block" >
+              <label class="slcts">Değerlendirmek istediğiniz satış noktasını giriniz.</label>
+              <md-select ng-model="slctMeetModel">
+                <md-option ng-repeat="val in slctMeet" value="{{val.value}}">
+                  {{val.value}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+
+          </div>
+          <div layout="row">
+            <md-input-container class="md-block" >
+              <label class="slcts">Bu satış noktasında sunulan hizmeti puanlayınız.</label>
+              <md-select ng-model="slctWaitModel">
+                <md-option ng-repeat="val in slctWait" value="{{val.point}}">
+                  {{val.point}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+          </div>
+          <div layout="row">
+            <md-input-container class="md-block" >
+              <label class="slcts">Müşteri hizmetleri personelinin yaklaşımı nasıldı?
+
+              </label>
+              <md-select ng-model="slctApproachModel">
+                <md-option ng-repeat="val in slctStaff" value="{{val.point}}">
+                  {{val.point}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+          </div>
+          <div layout="row">
+            <md-input-container class="md-block" >
+              <label class="slcts">Bu satış noktasındaki ürün ve fiyat danışmanlığını puanlayınız.</label>
+              <md-select ng-model="slctProductPrice">
+                <md-option ng-repeat="val in slctProductPrice" value="{{val.point}}">
+                  {{val.point}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+          </div>
+          <div  layout="row" >
+            <md-input-container class="md-block mybtn" >
+              <md-button class="md-raised md-primary ">Kayıd Et</md-button>
+            </md-input-container>
+          </div>
+        </form>
+      </div>
+    </md-content>
+  </ion-content>
+</ion-view>
+
+
+<!--<div class="row col-80 col-offset-10 text-center">-->
+<!--<h3 class="md-headline">Müşteri hizmetleri Değerlendirme</h3>-->
+<!--</div>-->
+<!--<br/>-->
+<!--<div class="row col-80 col-offset-10 text-center">-->
+<!--<h4 class="md-body-2">Arçelik müşteri hizmetleri ile bir görüşmeniz oldu mu?</h4>-->
+<!--</div>-->
+<!--<div class="row col-80 col-offset-10 text-center">-->
+<!--<md-input-container class="md-block" flex-gt-sm>-->
+<!--<label>Arçelik müşteri hizmetleri ile bir görüşmeniz oldu mu?</label>-->
+<!--<md-select ng-model="user.state">-->
+<!--<md-option ng-repeat="state in states" value="{{state.abbrev}}">-->
+<!--{{state.abbrev}}-->
+<!--</md-option>-->
+<!--</md-select>-->
+<!--</md-input-container>-->
+<!--</div>-->

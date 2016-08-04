@@ -1,0 +1,52 @@
+<ion-view title="Hoşgeldiniz">
+  <ion-content >
+    <md-content layout-paddign layout-margin ng-controller="products">
+      <div>
+        <form name="custServForm">
+          <h4 class="md-title text-center">Ürün Değerlendirmeleri veÖnerileri</h4>
+          <div layout="row">
+            <md-input-container class="md-block" >
+              <label class="slcts">Sahip olduğunuz Arçelik markalı ürünleri aşağıdaki menüden işaretleyiniz..</label>
+              <md-select ng-model="slctProduct">
+                <md-option ng-repeat="val in slctHour" value="{{val.value}}">
+                  {{val.value}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+
+          </div>
+          <div layout="row">
+            <md-input-container class="md-block">
+              <label >Arçelik sizin için başka neler üretebilir?</label>
+              <textarea ng-model="txtareaSuggestions" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+            </md-input-container>
+          </div>
+          <div  layout="row" >
+            <md-input-container class="md-block mybtn" >
+              <md-button class="md-raised md-primary ">Kayıd Et</md-button>
+            </md-input-container>
+          </div>
+        </form>
+      </div>
+    </md-content>
+  </ion-content>
+</ion-view>
+
+
+<!--<div class="row col-80 col-offset-10 text-center">-->
+<!--<h3 class="md-headline">Müşteri hizmetleri Değerlendirme</h3>-->
+<!--</div>-->
+<!--<br/>-->
+<!--<div class="row col-80 col-offset-10 text-center">-->
+<!--<h4 class="md-body-2">Arçelik müşteri hizmetleri ile bir görüşmeniz oldu mu?</h4>-->
+<!--</div>-->
+<!--<div class="row col-80 col-offset-10 text-center">-->
+<!--<md-input-container class="md-block" flex-gt-sm>-->
+<!--<label>Arçelik müşteri hizmetleri ile bir görüşmeniz oldu mu?</label>-->
+<!--<md-select ng-model="user.state">-->
+<!--<md-option ng-repeat="state in states" value="{{state.abbrev}}">-->
+<!--{{state.abbrev}}-->
+<!--</md-option>-->
+<!--</md-select>-->
+<!--</md-input-container>-->
+<!--</div>-->

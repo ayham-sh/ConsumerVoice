@@ -2,7 +2,7 @@
 <!--View name : Fake Login-->
 <!--State name : app.fakeLogin-->
 <!--URL : #app/fakeLogin-->
-<style>input.ng-invalid.ng-dirty{background-color: blue}</style>
+
 <ion-view title="Sign In">
     <!--left button on navigation bar-->
     <ion-nav-buttons side="left">
@@ -14,7 +14,7 @@
     <!--login content section-->
     <ion-content id="social-login" class="bg-white">
         <!--fake login form section-->
-        <form class="fakeLogin-form" name="loginForm">
+        <form class="fakeLogin-form">
             <div>
                 <img src="img/app_icon.png"/>
             </div>
@@ -22,20 +22,15 @@
 
             <div id="fakeLogin">
                 <md-input-container md-no-float="">
-                    <input type="EMAIL" class="user-name formplaceholder" required="true  " ng-model="user.name" ng-click="resetNameState()" placeholder="Username">
+                    <input class="user-name formplaceholder" placeholder="Username">
                 </md-input-container>
-              <span ng-show="NewForm.EventEmail.$touched && NewForm.EventEmail.$invalid">The Email is required</span>
-              <div ng-hide="user.nameState" ><p>please enter a valid email</p></div>
                 <hr/>
                 <md-input-container md-no-float="">
-                    <input class="user-password formplaceholder" required ng-model="user.password" ng-click="resetPasswordState()" type="password" placeholder="Password">
+                    <input class="user-password formplaceholder" type="password" placeholder="Password">
                 </md-input-container>
-              <div ng-hide="user.passwordState" ><p>the password or user name is wrong </p></div>
-
             </div>
-
             <div class="mybtn">
-                <a class="right md-raised md-button md-default-theme" ng-disabled="loginForm.$invalid" ng-click="signIn(user)">
+                <a class="right md-raised md-button md-default-theme" ng-click="">
                     Sign In
                 </a>
             </div>

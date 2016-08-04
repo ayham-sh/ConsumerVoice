@@ -1,0 +1,65 @@
+<ion-view title="Hoşgeldiniz">
+  <ion-content >
+    <md-content layout-paddign layout-margin ng-controller="faltyApply">
+      <div>
+        <form name="custServForm">
+          <h4 class="md-title text-center">Servis Başvurusu</h4>
+          <div layout="row">
+            <md-input-container class="md-block" >
+              <label >Yetkili servise ihtiyaç duyduğunuz problemi lütfen açıklayınız.</label>
+              <textarea ng-model="txtareaDetails" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+            </md-input-container>
+
+          </div>
+          <div layout="row">
+            <md-input-container class="md-block">
+              <label >Lütfen adresinizi giriniz.</label>
+              <textarea ng-model="txtareaAddress" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+            </md-input-container>
+          </div>
+          <div layout="row">
+            <md-input-container class="md-block">
+              <label>Servis talebiniz için uygun randevu günü belirtiniz.<br/>
+              I didn't create datapicker</label>
+            </md-input-container>
+          </div>
+          <div layout="row">
+            <md-input-container class="md-block" >
+              <label style="top: -120px">Servis talebiniz için uygun saati belirtiniz. <br/>
+              According to available hours from database</label>
+              <md-select ng-model="slctProblemSolution">
+                <md-option ng-repeat="val in slctHour" value="{{val.value}}">
+                  {{val.value}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+          </div>
+          <div  layout="row" >
+            <md-input-container class="md-block mybtn" >
+              <md-button class="md-raised md-primary ">Kayıd Et</md-button>
+            </md-input-container>
+          </div>
+        </form>
+      </div>
+    </md-content>
+  </ion-content>
+</ion-view>
+
+
+<!--<div class="row col-80 col-offset-10 text-center">-->
+<!--<h3 class="md-headline">Müşteri hizmetleri Değerlendirme</h3>-->
+<!--</div>-->
+<!--<br/>-->
+<!--<div class="row col-80 col-offset-10 text-center">-->
+<!--<h4 class="md-body-2">Arçelik müşteri hizmetleri ile bir görüşmeniz oldu mu?</h4>-->
+<!--</div>-->
+<!--<div class="row col-80 col-offset-10 text-center">-->
+<!--<md-input-container class="md-block" flex-gt-sm>-->
+<!--<label>Arçelik müşteri hizmetleri ile bir görüşmeniz oldu mu?</label>-->
+<!--<md-select ng-model="user.state">-->
+<!--<md-option ng-repeat="state in states" value="{{state.abbrev}}">-->
+<!--{{state.abbrev}}-->
+<!--</md-option>-->
+<!--</md-select>-->
+<!--</md-input-container>-->
+<!--</div>-->
