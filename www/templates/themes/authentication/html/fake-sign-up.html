@@ -29,23 +29,27 @@
         <md-input-container md-no-float="">
             <div>
                 <input type="EMAIL" class="user-name formplaceholder" name="EventEmail" ng-model="user.Email" required="true" placeholder="Mail">
-              <span ng-show="NewForm.EventEmail.$touched && NewForm.EventEmail.$invalid">The Email is required</span>
-              <span ng-show="{ verfiy == false}">The Email is required</span>
+              <span ng-show="NewForm.EventEmail.$touched && NewForm.EventEmail.$error.required ">The Email is required</span>
+              <span ng-show="NewForm.EventEmail.$touched && NewForm.EventEmail.$invalid "  ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/">Enter valid Email</span>
+
+              <span   > </span>
             </div>
         </md-input-container>
         <md-input-container md-no-float="">
             <div>
-                <input type="password" type="password" class="user-name   formplaceholder"  required="true"  name="Pass1" ng-model="Pass1"  placeholder="Password">
-              <span ng-show="NewForm.Pass1.$touched && NewForm.Pass1.$invalid">The password is required</span>
+                <input type="password" type="password" class="user-name   placeholder"  ng-required="true"  name="Pass1" ng-model="user.Pass1"  placeholder="Password">
+              <span ng-show="NewForm.Pass1.$touched && NewForm.Pass1.$invalid"  ng-minlength="8" >The password is required</span>
             </div>
         </md-input-container>
         <md-input-container md-no-float="">
             <div>
-                <input type="password" class="user-name formplaceholder" name="user.Pass2" ng-model="Pass2" placeholder="Confirm Password">
+                <input type="password" class="user-name placeholder" name="Pass2" ng-required="true" ng-model="user.Pass2" placeholder="Confirm Password">
             </div>
+          <span style="color: green;"  > {{password(user)}}</span>
         </md-input-container>
 
         <md-input-container md-no-float="">
+
 
             <div>
                 <input type="text" class="user-name formplaceholder" name="EventAdd" ng-model="user.Add" placeholder="Address">
@@ -56,9 +60,7 @@
                 <input type="text" class="user-name formplaceholder" name="EventSahip" ng-model="user.Sahip" placeholder="Sahip Olunan Arçelik Ürünleri:">
             </div>
         </md-input-container>
-        <md-checkbox aria-label="CheckboxTerms white-color" >
-            I accept terms and conditions.
-        </md-checkbox>
+
         <!--end input section-->
 
 
